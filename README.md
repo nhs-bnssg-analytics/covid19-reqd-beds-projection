@@ -5,8 +5,8 @@ simple script to generate a projection of beds required to support given traject
 ### author:   BNSSG Modelling and Analytics
 ### version:  1.0
 ### date:     20 March 2020
+### contact:  bnssg.analytics@nhs.net
 
-####################################################################################################################################################################
 
 # OVERVIEW
 # this function outputs bed requirement given i) expected number of hospitalisations over time, and ii) detail on expected length of stay distribution 

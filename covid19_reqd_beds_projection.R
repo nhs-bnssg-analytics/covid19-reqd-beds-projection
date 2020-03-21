@@ -197,6 +197,16 @@ combined<-rbind(inputs,outputs)
 
 write.csv(combined,paste0("output_data",filename_ext,".csv"),row.names=FALSE)
 
+peak_summary<-outputs %>%
+  filter(type=="outputs") %>%
+  spread(metric,value) %>%
+  slice(which.max(median))
+
+print(paste("Beds required at peak (median):",round(peak_summary$median,0)),quote=FALSE)
+print(paste("Beds required at peak (lower 95% CI):",round(peak_summary$q025,0)),quote=FALSE)
+print(paste("Beds required at peak (upper 95% CI):",round(peak_summary$q975,0)),quote=FALSE)
+print(paste("Outputs stored in:",getwd()),quote=FALSE)
+    
 return(combined)
 
 }

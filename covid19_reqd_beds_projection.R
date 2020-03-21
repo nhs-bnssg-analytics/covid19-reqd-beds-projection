@@ -163,6 +163,7 @@ peak_summary<-outputs %>%
   spread(metric,value) %>%
   slice(which.max(median))
 
+print(paste("Peak occurs at:",peak_summary$dates),quote=FALSE)
 print(paste("Beds required at peak (median):",round(peak_summary$median,0)),quote=FALSE)
 print(paste("Beds required at peak (lower 95% CI):",round(peak_summary$q025,0)),quote=FALSE)
 print(paste("Beds required at peak (upper 95% CI):",round(peak_summary$q975,0)),quote=FALSE)
